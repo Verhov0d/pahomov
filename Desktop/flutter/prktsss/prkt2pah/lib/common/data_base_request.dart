@@ -1,4 +1,5 @@
 abstract class DataBaseRequest {
+  static String select(String table) => 'Select * from $table';
   static const String tableRole = 'Role';
   static const String tableUser = 'User';
   static const String tableCar = 'Car';
@@ -43,9 +44,6 @@ abstract class DataBaseRequest {
   static const String _createTableUser = '''
     CREATE TABLE $tableUser (
     id INTEGER NOT NULL,
-    surname TEXT NOT NULL UNIQUE,
-    name TEXT NOT NULL UNIQUE,
-    otchestvo TEXT NOT NULL UNIQUE,
     login TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL, 
     id_role INTEGER NOT NULL, 
